@@ -20,7 +20,7 @@ int main(){
     } printf("A soma dos algarismos %d\n" ,soma);
 
 
-    return 0;
+    return 0;  
 }
-
+s
 
