@@ -8,7 +8,7 @@ int main(){
     scanf("%d", &numero);
 
     switch(numero%2){
-        case 0
+        case 0:
             printf("o numero par!\n");
             break;
         default:
@@ -22,5 +22,5 @@ int main(){
 
     return 0;  
 }
-s
+
 
