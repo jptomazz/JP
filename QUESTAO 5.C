@@ -1,30 +1,33 @@
-#include<stdio.h>
-#include<stdlib.h>
-int main(){
-    //MAIOR NÚMERO
+#include <stdio.h>
 
-    int a, b, maior;
+int main() {
+    int A, B;
 
-    scanf("%d %d", &a, &b);//Pro scanf, espaço ou enter ("\n") é a mesma coisa
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
 
-    if(a>b){
-        maior = a;
-        printf("%d eh maior que %d\n", a, b);
-            if(maior%b==0){
-                printf("%d eh multiplo de %d\n", a, b);
-            }else{
-                printf("%d nao eh multiplo de %d\n", a, b);
-            }
-    }else if(a<b){
-        maior = b;
-        printf("%d eh maior que %d\n", b, a);
-            if(maior%a==0){
-                printf("%d eh multiplo de %d\n", b, a);
-            }else{
-                printf("%d nao eh multiplo de %d\n", b, a);
-            }
-    }else if(a==b){
+    if (A == B) {
         printf("Os valores lidos sao iguais\n");
+    } else {
+        int maior, menor;
+        if (A > B) {
+            maior = A;
+            menor = B;
+        } else {
+            maior = B;
+            menor = A;
+        }
+
+        if (maior % menor == 0) {
+            printf("%d eh maior que %d\n", maior, menor);
+            printf("%d eh multiplo de %d\n", maior, menor);
+        } else {
+            printf("%d eh maior que %d\n", maior, menor);
+            printf("%d nao eh multiplo de %d\n", maior, menor);
+        }
     }
+
     return 0;
 }
