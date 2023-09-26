@@ -1,53 +1,21 @@
-#include<stdio.h> 
+#include <stdio.h>
 
-#include<stdlib.h> 
+int main() {
+    int ano;
+    
+    printf("Digite um ano (1800 <= X <= 2023): ");
+    scanf("%d", &ano);
 
-int main(){ 
+    if ((ano == 1896 || ano == 1900 || ano == 1904 || ano == 1908 || ano == 1912 || ano == 1920 ||
+         ano == 1924 || ano == 1928 || (ano >= 1932 && ano <= 2020 && ano % 4 == 0) || ano == 2022)) {
+        printf("Os Jogos Olimpicos de Verao ocorreram no ano de %d.\n", ano);
+    }
+    else if ((ano >= 1930 && ano <= 2018) && (ano - 1930) % 4 == 0) {
+        printf("A Copa do Mundo de Futebol ocorreu no ano de %d.\n", ano);
+    }
+    else {
+        printf("Nao houve Jogos Olimpicos de Verao ou Copa do Mundo no ano de %d.\n", ano);
+    }
 
-    /*int  aInt; 
-
-    double  ano, aDouble; 
-
-    scanf("%lf",&ano); 
-
-    aInt = (int)ano / 4; 
-
-    aDouble = ano / 4; 
-
-    printf("%.1lf\n", aDouble); 
-
-    printf("%d\n", aInt); 
-
-    printf("%lf\n", aDouble - aInt);*/ 
-
-    int anoInt, anoResposta; 
-
-    double ano, anoDouble, anoVerdade; 
-
-    scanf("%lf",&ano); 
-
-    anoResposta =  ano; 
-
-    anoInt = (int)ano/4; 
-
-    anoDouble = ano/4; 
-
-    anoVerdade = anoDouble - anoInt; 
-
-    if(ano>=1930 && anoVerdade==0.5){ 
-            if(ano==1942 || ano==1946){ 
-                printf("Nao houve Jogos Olimpicos de Verao ou Copa do Mundo no ano de %d.",anoResposta); 
-            }else{ 
-                printf("A Copa do Mundo de Futebol ocorreu no ano de %d.\n",anoResposta); 
-            } 
-
-    }else if(ano>=1896 && anoVerdade==0.0){ 
-        if(ano==1916 || ano==1940 || ano==1944){ 
-                printf("Nao houve Jogos Olimpicos de Verao ou Copa do Mundo no ano de %d.",anoResposta); 
-        }else{ 
-                printf("Os Jogos Olimpicos de Verao ocorreram no ano de %d.\n",anoResposta); 
-            } 
-    } else{ 
-        printf("Nao houve Jogos Olimpicos de Verao ou Copa do Mundo no ano de %d.",anoResposta); 
-    } 
-    return 0; 
+    return 0;
+}
