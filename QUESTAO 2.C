@@ -1,26 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(){
-    int numero;
-    int soma=0;
+int main() {
+    int numero, digito, soma = 0;
 
+    printf("Digite um numero (0 <= N <= 1000000000): ");
     scanf("%d", &numero);
 
-    switch(numero%2){
-        case 0:
-            printf("o numero par!\n");
-            break;
-        default:
-            printf("o numero impar!\n");
-    } while (numero !=0){
+    if (numero % 2 == 0) {
+        printf("O numero e par.\n");
+    } else {
+        printf("O numero e impar.\n");
+    }
 
-        soma+= numero%10;
-        numero /=10;
-    } printf("A soma dos algarismos %d\n" ,soma);
+    while (numero > 0) {
+        digito = numero % 10;
+        soma += digito;
+        numero /= 10;
+    }
+    
+    printf("A soma dos seus digitos e: %d\n", soma);
 
-
-    return 0;  
+    return 0;
 }
 
 
