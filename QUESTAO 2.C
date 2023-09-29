@@ -3,7 +3,7 @@
 int main() {
     int numero, digito, soma = 0;
 
-    printf("Digite um numero (0 <= N <= 1000000000): ");
+    printf("Digite um numero (0 <= N <= 1000000000):/n");
     scanf("%d", &numero);
 
     if (numero % 2 == 0) {
