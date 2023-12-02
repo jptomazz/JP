@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {questão02
-    int meses;
-    double aporte, taxa;
+int main() {
+    int numMeses; // Alterado "meses" para "numMeses"
+    double contribuicao, taxaJuros; // Alterado "aporte" para "contribuicao" e "taxa" para "taxaJuros"
 
-1212
-    scanf("%d", &meses);
-    scanf("%lf", &aporte);
-    scanf("%lf", &taxa);
+    scanf("%d", &numMeses);
+    scanf("%lf", &contribuicao);
+    scanf("%lf", &taxaJuros);
 
-    double montante = 0.0;
+    double montanteFinal = 0.0; // Alterado "montante" para "montanteFinal"
 
-    for (int i = 1; i <= meses; i++) {
-        montante = aporte * (1 + taxa);
-        montante *= (pow((1 + taxa), i) - 1) / taxa;
+    for (int mesAtual = 1; mesAtual <= numMeses; mesAtual++) {
+        montanteFinal = contribuicao * (1 + taxaJuros);
+        montanteFinal *= (pow((1 + taxaJuros), mesAtual) - 1) / taxaJuros;
 
-        printf("Montante ao fim do mes %d: R$ %.2f\n", i, montante);
+        printf("Montante ao fim do mes %d: R$ %.2f\n", mesAtual, montanteFinal);
     }
 
     return 0;

@@ -14,13 +14,12 @@ int valorRomano(char c) {
     }
 }
 
-int romanoParaDecimal(char *numRo) {
+int romanoParaDecimal(char *numRomano) {
     int resultado = 0;
-    int i;
-
-    for (i = 0; i < strlen(numRo); i++) {
-        int valorAtual = valorRomano(numRo[i]);
-        int valorProximo = (i < strlen(numRo) - 1) ? valorRomano(numRo[i + 1]) : 0;
+    
+    for (int i = 0; i < strlen(numRomano); i++) {
+        int valorAtual = valorRomano(numRomano[i]);
+        int valorProximo = (i < strlen(numRomano) - 1) ? valorRomano(numRomano[i + 1]) : 0;
         
         if (valorAtual < valorProximo) {
             resultado -= valorAtual;
@@ -49,17 +48,17 @@ void imprimirBinario(int decimal) {
 }
 
 int main() {
-    char numRo[13];
-    scanf("%s", numRo);
+    char numRomano[13];
+    scanf("%s", numRomano);
 
-    int decimal = romanoParaDecimal(numRo);
+    int decimal = romanoParaDecimal(numRomano);
 
-    printf("%s", numRo);
+    printf("%s", numRomano);
     imprimirBinario(decimal);
 
-    printf("%s na base 10: %d\n", numRo, decimal);
+    printf("%s na base 10: %d\n", numRomano, decimal);
 
-    printf("%s na base 16: %x\n", numRo, decimal);
+    printf("%s na base 16: %x\n", numRomano, decimal);
 
     return 0;
 }
